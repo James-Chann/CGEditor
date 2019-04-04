@@ -1,0 +1,89 @@
+/* 富文本组件style */
+
+/* ---富文本工具栏--------------------------------------------------------------------------------------------------------- */
+.tool_bar .bar_pic {
+  line-height: 20px;
+  text-align: left;
+}
+.bar_pic .pic_upload {
+  color: #1e9fff;
+}
+
+/* ---富文本文本区----------------------------------------------------------------------------------------------------------*/
+.text_div {
+  width: 510px;
+  height: 178px;
+  text-align: left;
+  line-height: 20px;
+  border: 1px solid #c5c5c5;
+  border-radius: 4px;
+  overflow-y: scroll;
+}
+
+/* ---选择图片上传区----------------------------------------------------------------------------------------------------------*/
+.pic_sel_modal .modal-title{
+  float: left;
+  font-size: 16px;
+}
+
+.pic_sel_modal .modal-close {
+  float: right;
+  margin-top: 0;
+}
+
+.pic_sel_modal .modal-body .form-group {
+  margin-bottom: 0;
+}
+
+.pic_sel_modal .custom_file {
+  position: relative;
+  height: 35px;
+}
+
+.pic_sel_modal .custom_file .custom_file_input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  display: inline-block;
+  outline:none;
+}
+
+.pic_sel_modal .custom_file .custom_file_label {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 1;
+  font-weight: 400;
+  font-size: 14px;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #ced4da;
+  border-radius: 3px;
+  padding: 4px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.pic_sel_modal .custom_file .custom_file_label::after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  display: block;
+  padding: 4px 8px;
+  font-size: 14px;
+  box-sizing: border-box;
+  color: #495057;
+  content: "选择文件";
+  background-color: #e9ecef;
+  border-left: inherit;
+  border-radius: 2px;
+  cursor: pointer;
+}
+

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>上传图片组件---article:CG</title>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="renderer" content="webkit">
+  <!-- css部分 -->
+  <link rel="stylesheet" type="text/css" href="../../../libs/font-awesome-4.7.0/css/font-awesome.css" />
+  <link rel="stylesheet" href="../../../libs/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="./index.css">
+</head>
+<body style="margin: 5px;">
+  <!-- 富文本组件 -->
+  <div class="txt_editor">
+    <!-- toolbar -->
+    <div class="tool_bar">
+    </div>
+    <!-- textarea -->
+    <div id="editor" name="content" class="text_div" contenteditable='true' onpaste="pastePic()">
+    </div>
+  </div>
+
+  <!-- 选择图片选择框 -->
+  <div class="modal fade pic_sel_modal" id="picUploadModal" data-backdrop="static">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- 模态框头部 -->
+        <div class="modal-header">
+          <h5 class="modal-title">上传图片</h5>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- 模态框主体 -->
+        <div class="modal-body">
+          <div class="form-group">
+            <div class="custom_file">
+                <input type="file" class="custom_file_input" id="picFile" accept="image/*">
+                <label class="custom_file_label" for="picFile" id = "fileName"></label>
+            </div>
+          </div>
+  
+        </div>
+        <!-- 模态框底部 -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="picUploadConfirm" style="margin-bottom: 0;">确定</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" onclick="filePicClear()">关闭</button>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+
+<!-- js部分 -->
+<script src="../../../js/jquery.2.0.3.min.js" type="text/javascript"></script>
+<script src="../../../config/api_config.js" type="text/javascript"></script>
+<script src="../../../libs/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="./index.js"></script>
+<script>
+  // 初始化富文本编辑器
+  var editor = new CGEditor({
+    reqUrl: baseUrl + '/advisory/filePathDisplay',   // 上传图片请求地址  ---必填项
+    imgUrl: baseUrl + '/advisory/downLoadAttachments?filePath=image', // 图片位置（图片存储固定文件夹） ---必填项
+    picUpload: true,   // 支持图片上传
+  });
+  editor.init();
+</script>
+</body>
+</html>
